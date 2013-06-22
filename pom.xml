@@ -106,7 +106,7 @@
               <id>main</id>
               <mainClass>com.pensistudios.lens.App</mainClass>
               <jvmArgs>
-                <jvmArg>-Djava.library.path=/Users/patrick/src/patrick/Lens/lens/target/natives/</jvmArg>
+				  <jvmArg>-Djava.library.path=/home/faiz/Documents/Lens/Lens/target/natives/</jvmArg>
                 <jvmArg>-Xmx4G</jvmArg>
               </jvmArgs>
             </launcher>
@@ -126,7 +126,7 @@
               </args>
               <jvmArgs>
                 <jvmArg>-Xmx2G</jvmArg>
-                <jvmArg>-Djava.library.path=/Users/patrick/src/patrick/Lens/lens/target/natives/</jvmArg>
+				<jvmArg>-Djava.library.path=/home/faiz/Documents/Lens/Lens/target/natives/</jvmArg>
               </jvmArgs>
             </configuration>
           </execution>
