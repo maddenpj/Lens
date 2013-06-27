@@ -1,35 +1,40 @@
 package com.pensistudios.lens;
 
 import org.lwjgl.LWJGLException
-import org.lwjgl.opengl.{Display, DisplayMode, GL11}
-import com.pensistudios.lens.Scenes;
-
+import org.lwjgl.opengl.{Display, DisplayMode, GL11, GLContext}
+import org.lwjgl.openal.AL
+import org.lwjgl.input.{Keyboard}
 
 object App {
+  
+  Manager // manager that is available everywhere
+
    def main(args: Array[String]) {
-     println( "Lens 0.0.1" )
-     var scene1 = new Scenes();
+     _enter
+
+      while( !Keyboard.isKeyDown(Keyboard.KEY_ESCAPE) ) { // render loop, ends on 'ESC'
+        Manager.play
+        Display.update
+      }
+
+     _exit
+   }
+
+   def _enter = { 
      Display.setDisplayMode(new DisplayMode(800,600) )
      Display.setTitle("Lens")
+
      Display.create
-    
-     scene1.displayScene(1)
-    // Opening credits
-    // run() kicks off the game, and credits
-     //  displayPiece(type: 'credit'|'cutscene', audio)
-     //       be able to display some graphics in terms of itself
-     //  displayMenu(type: 'ingame'|'opening', audio)
-     //       be able to display options, input selectable, with graphics
-     //  
+     
+     Assets  //instantiate assets after we create display
+     Scenes  //then scenes
 
+     println( "Lens 0.0.1" )
+   }
 
-     while(Display.isActive) {
-
-
-       Display.update
-     }
-
+   def _exit = { 
      Display.destroy
+     AL.destroy
    }
  }
 

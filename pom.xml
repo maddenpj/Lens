@@ -38,10 +38,16 @@
     <dependency>
       <groupId>org.lwjgl.lwjgl</groupId>
       <artifactId>lwjgl</artifactId>
-      <version>2.9.0</version>
+	  <version>2.9.0</version>
+  	</dependency>
+    <dependency>
+      <groupId>org.newdawn.slick</groupId>
+      <artifactId>slick-util</artifactId>
+	  <version>1.0</version>
     </dependency>
-
   </dependencies>
+
+
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
@@ -80,7 +86,7 @@
         <artifactId>maven-resources-plugin</artifactId>
         <version>2.5</version>
         <configuration>
-          <encoding>UTF-8</encoding>
+			<encoding>UTF-8</encoding>
         </configuration>
       </plugin>
 
@@ -150,7 +156,8 @@
 
 
 
-    </plugins>
+  </plugins>
+
   </build>
 
 </project>
